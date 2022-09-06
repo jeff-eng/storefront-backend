@@ -20,7 +20,7 @@ if (ENV==='test') {
         host: POSTGRES_HOST,
         database: POSTGRES_TEST_DB,
         user: POSTGRES_USER,
-        password: POSTGRES_PASSWORD
+        PASSWORD: POSTGRES_PASSWORD
     });
 }
 
@@ -29,7 +29,7 @@ if (ENV==='dev') {
         host: POSTGRES_HOST,
         database: POSTGRES_DB,
         user: POSTGRES_USER,
-        password: POSTGRES_PASSWORD
+        PASSWORD: POSTGRES_PASSWORD
     });
 }
 

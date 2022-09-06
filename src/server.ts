@@ -1,23 +1,25 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import productRoutes from './handlers/products';
 import userRoutes from './handlers/users';
+import orderRoutes from './handlers/orders';
 
 const app: express.Application = express();
-const port = 3000;
+const address: string = "0.0.0.0:3000";
 
 app.use(bodyParser.json());
 
-app.get('/', (req: express.Request, res: express.Response) => {
-    res.status(200).send('Hello world!');
+app.get('/', function (req: Request, res: Response) {
+    res.send('Hello World!');
 });
 
 // Route handlers
 productRoutes(app);
 userRoutes(app);
+orderRoutes(app);
 
-app.listen(port, () => {
-    console.log(`Server started at http://localhost:${port}`);
+app.listen(3000, function () {
+    console.log(`starting server on: ${address}`)
 });
 
 export default app;
